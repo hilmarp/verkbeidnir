@@ -1,0 +1,4 @@
+<?php
+
+class $NAME$ extends \BaseController {
+}
