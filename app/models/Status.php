@@ -1,6 +1,6 @@
 <?php
 
-class Work extends \Eloquent {
+class Status extends \Eloquent {
 	
 	protected $fillable = [];
 
@@ -8,8 +8,4 @@ class Work extends \Eloquent {
 	public static $rules = [
 		// 'title' => 'required'
 	];
-
-	public function customer() {
-		return $this->belongsTo('Customer');
-	}
 }

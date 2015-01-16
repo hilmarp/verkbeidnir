@@ -1,3 +1,7 @@
 <?php
 
-Route::get('work', 'WorkController@index');
+Route::group(['prefix' => 'api'], function() {
+
+	Route::get('works', 'WorkController@index');
+
+});

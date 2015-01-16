@@ -8,4 +8,8 @@ class Customer extends \Eloquent {
 	public static $rules = [
 		// 'title' => 'required'
 	];
+
+	public function works() {
+		return $this->hasMany('Work');
+	}
 }
