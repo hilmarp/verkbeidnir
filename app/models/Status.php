@@ -1,11 +1,19 @@
 <?php
 
 class Status extends \Eloquent {
+
+	protected $table = 'status';
 	
-	protected $fillable = [];
+	protected $fillable = ['status'];
 
 	// Validation rules
 	public static $rules = [
-		// 'title' => 'required'
+		'status' => ''
 	];
+
+	public $timestamps = false;
+
+	public function works() {
+		return $this->hasMany('Work');
+	}
 }

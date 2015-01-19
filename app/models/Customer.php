@@ -2,11 +2,15 @@
 
 class Customer extends \Eloquent {
 	
-	protected $fillable = [];
+	protected $fillable = ['ssn', 'name', 'address', 'telephone', 'email'];
 
 	// Validation rules
 	public static $rules = [
-		// 'title' => 'required'
+		'ssn' => '',
+		'name' => 'required',
+		'address' => '',
+		'telephone' => 'required',
+		'email' => ''
 	];
 
 	public function works() {

@@ -15,6 +15,13 @@ class CreateWorksTable extends Migration {
 		Schema::create('works', function(Blueprint $table) {
 
 			$table->increments('id');
+			$table->integer('customer_id')->unsigned();
+			$table->integer('status_id')->unsigned();
+			$table->string('type');
+			$table->text('description');
+			$table->string('password')->nullable();
+			$table->text('solution')->nullable();
+			$table->decimal('price', 8, 0)->nullable();
 			$table->timestamps();
 		});
 	}
