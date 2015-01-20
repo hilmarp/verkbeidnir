@@ -17,7 +17,29 @@ class UserController extends \BaseController {
 			'password' => Hash::make(Input::get('password'))
 		]);
 
-		return Response::json([ 'success' => true ]);
+		return Response::json($this->json_success);
+	}
+
+	public function update($id) {
+
+		$user = User::find($id);
+
+		$user->name = Input::get('name');
+		$user->email = Input::get('email');
+		$user->password = Hash::make(Input::get('password'));
+
+		$user->save();
+
+		return Response::json(['succes' => true]);
+	}
+
+	public function destroy($id) {
+
+		$user = User::find($id);
+
+		$user->delete();
+
+		return Response::json($this->json_success);
 	}
 
 }
